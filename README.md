@@ -42,3 +42,15 @@ Es una gran ayuda que combinado con un design-system da una muy buena solidez al
 📎  Redux-Toolkit
 
 
+## Installation
+
+```bash
+npm install # Instalación de todas las dependencias del proyecto
+npm run dev #  Ejecuta el proyecto en modo desarrollo
+npm run storybook # Ejecuta el entorno de storybook para visualizar los componentes
+# or
+yarn dev
+...
+```
+
+
