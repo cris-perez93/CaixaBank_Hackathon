@@ -1,6 +1,7 @@
 {
   "name": "caixabank_nuwe",
   "private": "true",
+  "public" : "false",
   "version": "1.0.0",
   "description": "",
   "workspaces": [
