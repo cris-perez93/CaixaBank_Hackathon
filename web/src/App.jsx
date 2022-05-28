@@ -1,11 +1,22 @@
 import HeaderComponent from './components/Header'
 import { Graphic, GraphicPie } from '../../common/Desing/StyledComponents/Molecules/Graphics'
 import { ContainerTransactions, ContainerConversionComponent } from '../../common/Desing/StyledComponents/Molecules/Containers'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import FakeAppBakground from '../../common/static/phone.png'
 import { LogoNeo } from '../../common/Desing/StyledComponents/Atoms/Logo'
 import { Heading } from '../../common/Desing/StyledComponents/Atoms/Heading'
 import { ButtonApp } from '../../common/Desing/StyledComponents/Atoms/Buttons'
+import { useState } from 'react'
+
+
+const Animation = keyframes`
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+`
 
 const WrapperPhone = styled.div`
  width:390px;
@@ -15,7 +26,7 @@ const WrapperPhone = styled.div`
  background-position:center;
  margin:0 auto ;
  margin-bottom:50px;
- margin-top:100px;
+ margin-top:60px;
  padding:60px;
  display:flex;
  flex-direction:column ;
@@ -23,6 +34,7 @@ const WrapperPhone = styled.div`
  justify-content:center ;
  gap:10px;
  overflow-x:hidden;
+ animation: ${Animation} 1s ease-in-out;
 `
 
 const Wrapper = styled.div`
@@ -35,6 +47,7 @@ const Wrapper = styled.div`
   justify-content: space-evenly;
   flex-wrap:wrap;
   gap:20px;
+  animation: ${Animation} 1s ease-in-out;
   
 
 
@@ -71,24 +84,34 @@ gap:10px;
 const WrapGraphicMobile = styled.div`
  width:325px;
  height:300px;
- 
+ `
+
+const ButtonVista = styled.div`
+width:200px;
+background-color: #6979F8;
+padding: 10px 20px ;
+border-radius: 50px;
+margin:0 auto ;
+text-align:center;
+color:white;
+font-family:'Montserrat', sans-serif;
+cursor: pointer;
+
 `
 
 function App () {
+  const [mobile, setMobile] = useState(false)
+
+  const handleClick = () => {
+    setMobile(!mobile)
+  }
+
   return (
     <>
       <HeaderComponent />
-      <Wrapper>
-       <WrapperLeft>
-         <WrapperFlex>
-         <ContainerTransactions mobile={false} quantity='35' date= 'last month'/>
-         <ContainerTransactions mobile={false} quantity='3' date= 'today'/>
-        </WrapperFlex>
-        <ContainerConversionComponent/>
-        </WrapperLeft>
-       <Graphic/>
-      </Wrapper>
-      <WrapperPhone>
+      <ButtonVista onClick={handleClick}>{mobile ? 'Vista web' : 'Vista mobile'}</ButtonVista>
+      {mobile
+        ? <WrapperPhone>
         <LogoNeo/>
         <Heading title>Transaction history</Heading>
         <Heading >These are your monthly and daily actions</Heading>
@@ -101,6 +124,17 @@ function App () {
         </WrapGraphicMobile>
         <ButtonApp>children</ButtonApp>
       </WrapperPhone>
+        : <Wrapper>
+       <WrapperLeft>
+         <WrapperFlex>
+         <ContainerTransactions mobile={false} quantity='35' date= 'last month'/>
+         <ContainerTransactions mobile={false} quantity='3' date= 'today'/>
+        </WrapperFlex>
+        <ContainerConversionComponent/>
+        </WrapperLeft>
+       <Graphic/>
+      </Wrapper>}
+
     </>
   )
 }

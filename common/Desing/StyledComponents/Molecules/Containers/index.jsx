@@ -25,6 +25,12 @@ const containerTransactions = css`
    background-color:white;
    box-shadow:0px 0px 5px 0px rgba(0,0,0,0.75);
    color: black;
+   transition: all 0.3s ease-in-out;
+   
+   &:hover{
+      background-color: #d4d4d4;
+      cursor: pointer;
+   }
 `
 const textContainer = css`
 font-weight:${props => props.grey ? 'normal' : '600'};

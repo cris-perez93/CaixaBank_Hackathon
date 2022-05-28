@@ -1,6 +1,7 @@
 import ButtonLogo from '../../../../static/Small.png'
 import styled, { css } from 'styled-components'
 import propTypes from 'prop-types'
+
 // this code is available too for react-native
 /* ex: const Wrapper = styled.View`
   ${wrapperButton}
