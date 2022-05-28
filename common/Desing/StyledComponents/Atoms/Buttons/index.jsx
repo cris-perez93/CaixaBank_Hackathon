@@ -38,6 +38,7 @@ Buttondots.defaultProps = {
 
 const buttonmobile = css`
   cursor: pointer;
+  z-index:10;
   width:max-content;
   padding:10px 90px ;
   border-radius:31px;

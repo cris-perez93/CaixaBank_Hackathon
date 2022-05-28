@@ -69,11 +69,8 @@ gap:10px;
 `
 
 const WrapGraphicMobile = styled.div`
- width:320px;
- z-index:0;
- 
- 
- 
+ width:325px;
+ height:300px;
  
 `
 
