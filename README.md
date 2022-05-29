@@ -29,6 +29,12 @@ Todo esto hace que sea mas mantenible tu codigo y mas facil de manejar.
 He decidido trabajar con esta gran libreria para documentar mis componentes, para ver las diferentes versiones y su caso de uso en mobile o web.
 Es una gran ayuda que combinado con un design-system da una muy buena solidez al proyecto.
 
+## 📖 Graficas 
+Las graficas mostradas han sido gracias a la libreria https://www.highcharts.com/blog/posts/frameworks/react/
+Los datos en este caso son estaticos , pero podriamos estar utilizando una api , y a traves de redux mostrar el resultado de las 
+llamadas en las dos plataformas simultaneamente.
+     
+
 ## Estructura de carpetas
 ![](/common/static/structure.png)
 
